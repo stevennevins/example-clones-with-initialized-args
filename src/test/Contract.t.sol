@@ -18,6 +18,7 @@ contract Vault is Clone {
 
     function transferOwnership(address _newOwner) public {
         require(msg.sender == owner(), "not owner");
+        require(_newOwner != address(0), "renounce to another address");
         owner_ = _newOwner;
     }
 }
